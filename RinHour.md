@@ -1,4 +1,4 @@
-# Tech Talk - R in an Hour
+# R in an Hour
 ## Overview
 The objective of this presentation is to demonstrate the R language in the wild:
 
