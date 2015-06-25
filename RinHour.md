@@ -2,20 +2,33 @@
 ## Overview
 The objective of this presentation is to demonstrate the R language in the wild:
 
-- Show high level aspects of R Language
-- Show high level use cases for R
-- Demo for Reproducible Research
-- Demo for Stats Collection tool
+- High level aspects of R Language
+- Community & Culture
+- Reproducible Research
 
 ## R Language
 ### Background
+- Dialect of S Language
+- S originally statistics libraries in FORTRAN, 1976
+- S Port to C in 1988
+- S version 4 is basis for R, 1998
 ### Idioms
-### CRAN & R Community
+
+## Community
+### CRAN
 - Dplyr package
-
-## Use Cases
-### Scientific Research
-#### Exploration
-#### Reproducible Research
-
+### Open Source
+- Git
+### Publish
+- RPubs
+### Reproducible Research
+#### Pipeline
+##### Raw Data Aquisition
+##### Tidy Data
+##### Exploratory
+##### Measurements
+##### Analytics
+##### Computational Results
+##### Presentation
+##### Reporting
 ### Analytics
