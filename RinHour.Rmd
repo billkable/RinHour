@@ -12,6 +12,8 @@ output: ioslides_presentation
 - Demo/Walkthrough of Real R projects
 - We WILL NOT cover deep language syntax (sorry engineers, separate Talk ;)
 
+![](./Rlogo.png)
+
 ## R - What is it? Where did it come from?
 
 - Historically a DSL for Statistic analysis and reporting
@@ -58,7 +60,8 @@ someList <- list(someMatrix,someVector)
 
 ```{r data.table.example, message=FALSE,warning=FALSE}
 library(data.table)
-dt <- data.table(id = c(1,2,2,3,3,3), value = c(100,200,200,300,300,300))
+dt <- data.table(id = c(1,2,2,3,3,3), 
+                 value = c(100,200,200,300,300,300))
 ```
 
 ## R - Accessing element from data table
