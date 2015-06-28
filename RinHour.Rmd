@@ -1,0 +1,98 @@
+---
+title: "R in an Hour"
+author: "Bill Kable"
+date: "June 28, 2015"
+output: ioslides_presentation
+---
+
+## What are we going to cover
+
+- Highlights of R language, a bit of history and its characteristics
+- Really good areas to consider R language and eco-system
+- Demo/Walkthrough of Real R projects
+- We WILL NOT cover deep language syntax (sorry engineers, separate Talk ;)
+
+## R - What is it? Where did it come from?
+
+- Historically a DSL for Statistic analysis and reporting
+- Based from S language
+
+    - S in 1970s
+    - R dialect of S in late 1990's
+        
+- Implemented in C and FORTAN
+- Heavy adoption in Data Science in recent years
+- Heavy community support to extend R core with packages - CRAN
+- Competition from Python
+
+## R - Language Characteristics
+- Dynamic Typing
+- Interpreted
+- Functional, with some OO littered in
+- Declarative vs Imperative -- emphasis on set operations
+- No scalars, typing built from Vectors, Matrix, Lists and Data Frames/Data Tables
+- Potentially large learning curve for Java Dev vs. Python
+
+## R - Goodies
+- Vectors
+
+```{r vector.example, message=FALSE,warning=FALSE}
+someVector <- c(1,2,3)
+```
+
+- Matrix
+
+```{r matrix.example, message=FALSE,warning=FALSE}
+someMatrix <- c(1,2,3,4,5,6, nrow=2,ncol=3)
+```
+
+- List
+
+```{r list.example, message=FALSE,warning=FALSE}
+someList <- list(someMatrix,someVector)
+```
+
+## R - Data Frame (Table)
+- In R we can create tables (similar to tables in RDBMS)
+- Create a Data Frame (Table)
+
+```{r data.table.example, message=FALSE,warning=FALSE}
+library(data.table)
+dt <- data.table(id = c(1,2,2,3,3,3), value = c(100,200,200,300,300,300))
+```
+
+## R - Accessing element from data table
+- To access an element, we can use "subsetting"
+- By Row:
+```{r subset.row.example, message=FALSE,warning=FALSE}
+dt[2]
+```
+- Columns by name:
+```{r subset.name.example, message=FALSE,warning=FALSE}
+dt$value[2]
+```
+
+## R - Filtering data tables
+- Let's filter table rows with ID of two via "subsetting"
+- Subsetting is R core feature to select
+
+```{r subset.example, message=FALSE,warning=FALSE}
+dt[dt$id == 2]
+```
+- Or, we can use the dplyr (or plyr) filter method...
+```{r filter.example, message=FALSE,warning=FALSE}
+library(dplyr)
+filter(dt,id == 2)
+```
+
+## R - Chaining
+- Chain several aggregrate operations
+```{r chain.example, message=FALSE,warning=FALSE}
+filter(dt, id > 1) %>%
+        group_by(id) %>% summarize(count = n(),
+                                   total = sum(value))
+```
+
+## R - Key Language Takeaway: Avoid Looping Constructs!
+- R Language Performance - traditional procedural looping constructs not as efficient as set based constructs
+- Much effort by community to build performant set based packages
