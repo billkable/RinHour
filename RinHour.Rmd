@@ -19,7 +19,7 @@ h3 {
 - Highlights of R language, a bit of history and its characteristics
 - Great uses to consider R language and eco-system
 - Demo/Walkthrough of Real R projects
-- We WILL NOT cover deep language syntax (sorry engineers, separate Talk ;)
+- We WILL NOT cover deep language syntax - sorry engineers, separate Talk ;)
 
 ![](./Rlogo.png)
 
@@ -55,6 +55,10 @@ h3 {
 - Declarative vs Imperative -- emphasis on set operations, versus scalar
 - Potentially large learning curve for developers with OO or Imperative Language Backgrounds
 
+<div class="notes">
+
+</div>
+
 ## R - Foundational Basics
 - Vectors
 
@@ -74,6 +78,12 @@ someMatrix <- c(1,2,3,4,5,6, nrow=2,ncol=3)
 someList <- list(someMatrix,someVector)
 ```
 
+<div class="notes">
+Vectors, Matrices & Lists are the foundational building blocks in R.
+Scalars are available, but take a back seat in declarative, set based 
+language like R.
+</div>
+
 ## R - Data Frame (Table)
 
 - In R we can create tables (similar to tables in RDBMS)
@@ -88,6 +98,15 @@ dt <- data.table(id = c(1:100),
                  value = c(sample(1:1000,100)))
 ```
 
+<div class="notes">
+The Data Frame (or Data Table) closely resembled the table in Relational
+Databases.
+
+The Data Table is an extended CRAN package implemented in C for raw
+performance, and adds convenience methods on top of base R.
+
+</div>
+
 ## R - Accessing element from data table
 
 - To access an element, we can use "subsetting"
@@ -99,6 +118,10 @@ dt[2]
 ```{r subset.name.example, message=FALSE,warning=FALSE}
 dt$value[2]
 ```
+
+<div class="notes">
+
+</div>
 
 ## R - Filtering data tables
 
@@ -114,6 +137,10 @@ library(dplyr)
 filter(dt,id == 2)
 ```
 
+<div class="notes">
+
+</div>
+
 ## R - Chaining
 
 - Chain several aggregrate operations
@@ -126,6 +153,10 @@ filter(dt, id > 10) %>%
                   total = sum(value))
 ```
 
+<div class="notes">
+
+</div>
+
 ## R - Plotting
 
 ```{r example.plot}
@@ -134,12 +165,24 @@ p <- qplot(x=id, y=value, data=dt)
 print(p)
 ```
 
+<div class="notes">
+
+</div>
+
 ## R - Key Language Takeaway | Avoid Looping Constructs!
 
 - R Language Performance - traditional procedural looping constructs not as efficient as set based constructs
 - Much effort by community to build performant set based packages, such as `dplyr` and `data.table`
 
+<div class="notes">
+
+</div>
+
 # R Uses and Ecosystem...
+
+<div class="notes">
+
+</div>
 
 ## What is it good for?
 
@@ -147,10 +190,18 @@ print(p)
 - Exploratory Analysis
 - Lightweight Reporting
 
+<div class="notes">
+
+</div>
+
 ## What is is NOT good for?
 
 - Systems Programming
 - Complex Reporting
+
+<div class="notes">
+
+</div>
 
 ## Ecosystem
 
@@ -158,11 +209,20 @@ print(p)
 - Commercial Contributors - RStudio, Revolution Analytics
 - Affliation with Open Source Agile tools - GitHub, RPubs, Markdown
 
+<div class="notes">
+
+</div>
+
 ## RStudio
+
 - IDE
 - Interactive Reporting Server
 
 ![](./blue-250.png)
+
+<div class="notes">
+
+</div>
 
 ## Markdown | Simplistic text only Markup language 
 - No tags (like in JSON, HTML, XML)
@@ -183,6 +243,10 @@ print(p)
 
 ```
 
+<div class="notes">
+
+</div>
+
 ## Markdown | Rendering
 
 ### Level 3 Heading
@@ -192,6 +256,10 @@ print(p)
 1. Order List Item (bullet)
 
 [Some Link Title](http://somehypertextlink.com)
+
+<div class="notes">
+
+</div>
 
 ## RMarkdown & Literal Programming
 
@@ -203,15 +271,31 @@ print(p)
 - This presentation was implemented with RMarkdown, using Google ioslide output format.
 - RStudio supports interactive reporting via RMarkdown and Shiny framework
 
+<div class="notes">
+
+</div>
+
 ## RPubs
 
 - Community Web Server for Publishing results
 - Single click publish from RStudio for RMarkdown Content
 - Free Edition is restrictive for full (public access)
 
+<div class="notes">
+
+</div>
+
 # Walkthrough of HAR Extract Report
 
+<div class="notes">
+
+</div>
+
 # Walkthrough of Reproducible Research Project
+
+<div class="notes">
+
+</div>
 
 # Bye!
 
