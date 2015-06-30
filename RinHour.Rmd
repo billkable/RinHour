@@ -189,6 +189,7 @@ print(p)
 - Statistics/Numerical analysis and Reporting
 - Exploratory Analysis
 - Lightweight Reporting
+- Lightweight Presentations (like this one)
 
 <div class="notes">
 
@@ -264,9 +265,9 @@ print(p)
 ## RMarkdown & Literal Programming
 
 - **Literal Programming**: Documenting logical flow in plain English, embedding code supporting the flow
-- RStudio supports Literal Programming through embed of RMarkdown
+- RStudio supports Literal Programming
 - RMarkdown is implementation of Markdown, allowing:
-    - Embed of dynamic code
+    - Embed of dynamic R code
     - Output of different formats, such as HTML, PDF, etc
 - This presentation was implemented with RMarkdown, using Google ioslide output format.
 - RStudio supports interactive reporting via RMarkdown and Shiny framework
